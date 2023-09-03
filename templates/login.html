@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+<style>
+  html{
+      height:100%;
+  }
+  body{
+      margin:0;
+      padding:0;
+      font-family:sans-serif;
+      background:linear-gradient(#57606f.#2f3542);
+  }
+  .login-box{
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:400px;
+      padding:40px;
+      transform:translate(-50% ,-50%);
+      background:rgba(0,0,0,.7);
+      box-sizing:border-box;
+      box-shadow:0 15px 25px rgba(0,0,0,.6);
+      border-radius:10px;
+  }
+  .login-box h2{
+      margin:0 0 30px;
+      padding:0;
+      color:#fff;
+      text-align:center;
+  }
+  .login-box.user-box{
+      position:relative;
+  }
+  input{
+      width:100%;
+      padding:10px 0;
+      font-size:16px;
+      color:#fff;
+      margin-bottom:30px;
+      border:none;
+      border-bottom:1px solid #fff;
+      outline:none;
+      background:transparent;
+  }
+  button:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+   }
+
+   a span{
+     position:absolute;
+     display:block;
+  }
+  button {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 12px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+a:link {
+         color: white;
+         background-color: transparent;
+         text-decoration: none;
+  }
+a:visited {
+         color:white;
+         text-decoration: none;
+   }
+a:active {
+         background-color:white;
+
+</style>
+</head>
+<body>
+<center>
+<div class="login-box">
+     <h2>Login</h2>
+<form class=log-form action="login" method="post">
+     {% csrf_token %}
+     <div class="user-box">
+    <input type="text" name="username" placeholder="Enter your username"><br>
+     </div>
+     <div class="user-box">
+    <input type="password" name="password" placeholder="Enter your password"><br>
+     </div>
+     <a>
+        <button type="submit">Submit</button>
+     </a>
+     <div class="register">
+        <p>Don't have an account? <a href="register">Register</a></p>
+     </div>
+
+</form>
+</div>
+{% for msg2 in messages %}
+<h2>{{msg2}}</h2>
+{% endfor %}
+</center>
+</body>
+</html>

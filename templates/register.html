@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+  body{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      background:white;
+  }
+  .btn{
+
+      border-radius:4;
+      overflow:hidden;
+      margin-top:9px;
+      color:green;
+      font-weight:bold;
+      padding:6px;
+  }
+  .btn:hover{
+      background:transparent;
+      box-shadow:0 0 20px 10px rgba(5,152,219,0.5);
+
+  }
+  .reg-form{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:100px 100px;
+      color:white;
+      background:linear-gradient(45deg,white,dodgerblue);
+      border-radius:10px;
+      box-shadow:0 15px 25px rgba(0,0,0,.6);
+
+  }
+  label{
+     width:110px;
+     display:inline-block;
+     margin:0.2cm;
+     font-size:16px;
+     font-weight:bold;
+     color:black;
+  }
+  .reg-form h1{
+     margin:0 0 24px 0;
+     color:black;
+  }
+  input{
+     padding:4px;
+     margin:5px;
+     font-size:16px;
+     border-radius:10px;
+     border:1px solid #f9f9f9;
+     width:7cm;
+  }
+
+</style>
+</head>
+<body>
+<center>
+<form class="reg-form" action="register" method="post">
+    <h1>Registration</h1>
+    {% csrf_token %}
+    <div class="form-input-material">
+    <label>Username:</label>
+    <input type="text" name="username" placeholder="Enter your username"><br>
+    <label>Password:</label>
+    <input type="password" name="password" placeholder="Enter your password"><br>
+    <label>Confirm Password:</label>
+    <input type="password" name="password1" placeholder="Confirm your password"><br>
+        <br>
+    <button type="submit" class="btn btn-primary btn-ghost">Submit</button>
+    </div>
+</form>
+{% for msg1 in messages %}
+<h2>{{msg1}}</h2>
+{% endfor %}
+</center>
+</body>
+</html>

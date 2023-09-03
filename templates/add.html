@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="index.js"></script>
+    <script type="text/javascript">
+
+            function showMessage() {
+                alert(" your application accepted");
+            }
+    function Openform()
+    {
+    document.getElementById('form1').style.display = '';
+     }
+
+</script>
+<style>
+  a:link {
+         color: greenyellow;
+         background-color: transparent;
+         text-decoration: none;
+
+  }
+a:visited {
+         color: black;
+         background-color: green;
+         text-decoration: none;
+   }
+
+  function Openform()
+  {
+    document.getElementById('form1').style.display = '';
+  }
+  body{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:50px;
+      background:white;
+  }
+
+  .btn{
+
+      border-radius:4;
+      overflow:hidden;
+      margin-top:16px;
+      color:green;
+      font-weight:bold;
+      padding:6px;
+
+  }
+  .btn:hover{
+      background:white;
+      box-shadow:0 0 20px 10px rgba(5,152,219,0.5);
+
+  }
+  .reg-form{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:0px 100px;
+      color:white;
+      background:linear-gradient(45deg,white,dodgerblue);
+      border-radius:10px;
+      box-shadow:0 15px 25px rgba(0,0,0,.6);
+      box-width:5%;
+      margin: auto;
+      background: #2d3e3f;
+
+  }
+  label{
+     width:110px;
+     display:inline-block;
+     margin:0.2cm;
+     font-size:16px;
+     font-weight:bold;
+     color:white;
+  }
+  .reg-form h1{
+     margin:0 0 24px 0;
+     color:white;
+  }
+  input{
+     padding:4px;
+     margin:5px;
+     font-size:16px;
+     border-radius:10px;
+     border:1px solid #f9f9f9;
+     width:7cm;
+  }
+
+.radio{
+	color: white;
+	background: #2d3e3f;
+	line-height: 30px;
+  }
+a:link {
+         color: white;
+         background-color: transparent;
+         text-decoration: none;
+  }
+a:visited {
+         color: green;
+         background-color:green;
+         text-decoration: none;
+   }
+a:active {
+         color: yellow;
+         background-color: green;
+   }
+ /* Dropdown Button */
+.dropbtn {
+  background-color:white;
+  color: black;
+  padding: 16px;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+  width:200px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 20px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+</style>
+</head>
+<body>
+<center>
+     <input id="dynamic" name="Irrigation Form" type="button" value="Click Here" ; onclick = "Openform();"
+    style="overflow:hidden;padding: 5px 5px; border-radius: 3px;font-size: 10.5pt; width:200px ; background-color: #E7FCCA; font-weight: bold; ">
+    <div id = "form1" style = "display:none">
+<form class="reg-form" id="formirri" method="post" action=""  enctype="multipart/form-data" target="_parent">
+    <br>
+    <h1>Form</h1>
+    {% csrf_token %}
+    <div class="form-input-material">
+    <label>Full Name :</label>
+    <input type="text" name="username" placeholder="Enter your full name"><br>
+    <label> Email Id :</label>
+    <input type="email" name="email" placeholder="Enter your email"><br>
+    <label> Phone No. :</label>
+    <input type="text" required name="phoneNo" maxlength="10" placeholder="Enter your phone no"><br>
+    <label  class="fl fontLabel"> Date of Birth: </label>
+    <input type="date" name="date" ><br>
+    <label> Age :</label>
+    <input type="number" required name="Age" placeholder="Enter your Age"><br>
+     <label> Address:</label>
+     <input type="Address"   required name="Address"  placeholder="Enter your address"><br>
+     </div>
+     <div>
+    <label> Gender :</label>
+    <div class="box radio">
+    <input type="radio" name="gender" value="male"> Male <br>
+    <input type="radio" name="gender" value="female"> Female
+      </div>
+     <label> District :</label>
+          <select class="form-control" id="inputDistrict">
+            <option value="select" disabled selected>-----Select One--</option>
+            <option value="Alapuzha">Alapuzha</option>
+            <option value="ernakulam">Ernakulam</option>
+            <option value="kozhikode">Kozhikode</option>
+            <option value="palakkad">Palakkad</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Kannur">Kannur</option>
+            <option value="Kasaragod">Karasagod</option>
+            <option value="Idukki">Idukki</option>
+            <option value="Kottayam">Kottayam</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Wayanad">Wayanad</option>
+            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+     </select>
+         </div>
+     <div>
+    <label> Account type: </label>
+     <select  id="account-select" class="standard-select" required>
+            <option value="select" disabled selected>---Choose Account--</option>
+            <option value="current-current"> Current Account</option>
+            <option value="instant-saver">Saving Account</option>
+            <option value="instant-saver">Salary Account</option>
+          </select>
+     </div>
+     <fieldset  style="color:white;height:auto;">
+                <legend>Materials Provide</legend>
+                <br>
+            <div>
+            <input type="checkbox" id="Debit Cards" name="Debit Cards" value="Debit Cards" />
+            <label >Debit Cards</label>
+             </div>
+             <div>
+            <input type="checkbox" id="Credit Cards" name="Credit Cards" value="Credit Cards" />
+            <label for="Credit Cards">Credit Cards</label>
+             </div>
+               <div>
+            <input type="checkbox" id="Prepaid Cards" name="Prepaid Cards" value="Prepaid Cards" />
+            <label>Prepaid Cards</label>
+             </div>
+                <br>
+     </fieldset>
+         <div>
+         <button type="submit"  class="btn btn-success" id="btnShowMsg" value="Submit" onClick="showMessage()">Submit</button>
+         <button type="submit" class="btn btn-success"><a href="/">Logout</a></button>
+        <div class="register">
+        <p><a href="/">Home</a></p>
+            </div>
+     </div>
+    </div>
+</form>
+</center>
+</body>
+</html>

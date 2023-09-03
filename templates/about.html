@@ -1,0 +1,48 @@
+<body>
+    <form name="myform" class="wrapper">
+        <input type="text" name="q" onkeyup="showUser()" />
+        <input type="button" name="button" value="Search" onclick="showUser()" class="button"/>
+         <p>
+             <div id="txtHint"></div>
+         </p>
+    </form>
+</body>
+
+
+.button {
+    background-image: url ('/image/btn.png') no-repeat;
+    cursor:pointer;
+}
+
+
+
+ <form method="post">
+  {% csrf_token %}
+ <div class="register">
+
+
+ <button class="btn btn-outline-success" ><a href="/add">Click Here</a></button>
+
+
+     <select class="form-control" id="inputDistrict">
+            <option value="select" disabled selected>Select One</option>
+            <option value="ernakulam">Ernakulam</option>
+            <option value="kozhikode">Kozhikode</option>
+            <option value="palakkad">Palakkad</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Kannur">Kannur</option>
+            <option value="Kasaragod">Karasagod</option>
+            <option value="Idukki">Idukki</option>
+            <option value="Kottayam">Kottayam</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Wayanad">Wayanad</option>
+            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+     </select>
+
+
+     def newpage(request):
+    if request.method == "POST":
+        return redirect('add')
+    return render(request, "newpage.html")

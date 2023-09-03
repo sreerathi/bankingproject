@@ -1,0 +1,250 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+       <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+ *{
+	padding: 0;
+	margin: 0;
+}
+body{
+  background: url(http://wrbbradio.org/wp-content/uploads/2016/10/grey-background-07.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+.container{
+	 background: #2d3e3f;
+	height: 600px;
+	padding-bottom: 100px;
+	position: absolute;
+	top:50%;
+	left: 50%;width: 400px;
+	transform: translate(-50%, -50%);
+	margin: auto;
+    padding: 70px 50px 20px 50px;
+}
+
+
+.fl{
+	float: left;
+  width: 110px;
+  line-height: 35px;
+}
+
+.fontLabel{
+  color: white;
+}
+
+.fr{
+	float: right;
+}
+
+.clr{
+	clear: both;
+}
+
+.box{
+	width: 360px;
+	height: 35px;
+	margin-top: 10px;
+	font-family: verdana;
+	font-size: 12px;
+}
+
+.textBox{
+	height: 35px;
+	width: 190px;
+	border: none;
+  padding-left: 20px;
+}
+
+.new{
+  float: left;
+}
+
+.iconBox{
+	height: 35px;
+	width: 40px;
+	line-height: 38px;
+	text-align: center;
+  background: #ff6600;
+}
+
+.radio{
+	color: white;
+	background: #2d3e3f;
+	line-height: 38px;
+}
+
+.terms{
+	line-height: 35px;
+	text-align: center;
+	background: #2d3e3f;
+	color: white;
+}
+
+.submit{
+	float: center;
+	border: none;
+	color: white;
+	width: 110px;
+	height: 35px;
+	background: #ff6600;
+	text-transform: uppercase;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+}
+.Click-here {
+  cursor: pointer;
+  background-image: linear-gradient(190deg, #f83600 0%, #fee140 100%);
+  color: #fff;
+  width: 180px;
+  text-align: center;
+  font-size:16px;
+  padding: 18px 0;
+  margin: 0 auto;
+  transition:background-image 3s ease-in-out;
+}
+.Click-here:hover{
+  transition:background-image 3s ease-in-out;
+  background-image: linear-gradient(90deg, #fee140 0%, #f83600 100%);
+}
+</style>
+  </head>
+  <body>
+    <!-- Body of Form starts -->
+  	<div class="container">
+          <form class="addinfo" action="addinfo" method="post">
+         {% csrf_token %}
+        <!--First name-->
+         	<div class="box">
+          <label  class="fl fontLabel"> Full Name: </label>
+    					<input type="text" required name="Full dName"
+              placeholder="Full Name" class="textBox">
+    			</div>
+    		<!--First name-->
+          <!---Email ID---->
+    		<div class="box">
+          <label  class="fl fontLabel"> Email ID: </label>
+    					<input type="email" required name="email" placeholder="Email Id" class="textBox">
+    			</div>
+
+    		<!--Email ID----->
+
+    		<!---Phone No.------>
+    		<div class="box">
+          <label  class="fl fontLabel"> Phone No.: </label>
+
+    					<input type="text" required name="phoneNo" maxlength="10" placeholder="Phone No." class="textBox">
+    			</div>
+
+    		<!---Phone No.---->
+          <!--date of birth----->
+            <div class="box">
+           <label  class="fl fontLabel"> Date of Birth: </label>
+        <input type="date" name="date"  class="textBox">
+            </div>
+            <!--date of birth----->
+        <!--Age-->
+    		<div class="box">
+          <label  class="fl fontLabel"> Age: </label>
+
+    					<input type="text" required name="Age"
+              placeholder="Age" class="textBox">
+    			</div>
+
+    		<!--Age-->
+          <!---Gender----->
+    		<div class="box radio">
+          <label  class="fl fontLabel"> Gender: </label>
+    				<input type="radio" name="Gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
+    				<input type="radio" name="Gender" value="Female" required> Female
+    		</div>
+    		<!---Gender--->
+    		<!---District------>
+
+            <div class="box">
+            <div class="form-group col-md-4">
+            <label class="fl fontLabel">District:</label>
+            <select class="form-control" id="inputDistrict">
+            <option value="select" disabled selected>Select One</option>
+            <option value="ernakulam">Ernakulam</option>
+            <option value="kozhikode">Kozhikode</option>
+            <option value="palakkad">Palakkad</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Kannur">Kannur</option>
+            <option value="Kasaragod">Karasagod</option>
+            <option value="Idukki">Idukki</option>
+            <option value="Kottayam">Kottayam</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Wayanad">Wayanad</option>
+            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+            </select>
+            </div>
+            </div>
+    		<!---District---->
+
+          <!----- Address ---------------------------------------------------------->
+           <div class="box">
+           <label  class="fl fontLabel"> <label> Age:</label>
+    <input type="text" required name="Age" placeholder="Enter your age"><br> </label>
+
+                <input type="Address"   required name="Address" placeholder="Address" class="textBox">
+
+           </div>
+          <!----- Address ---------------------------------------------------------->
+           <!---Account type---->
+          <div class="box">
+          <label  class="fl fontLabel"> Account type: </label><br>
+          <select  id="account-select" class="standard-select" required>
+            <option value="select" disabled selected>Choose Account</option>
+            <option value="current-current"> Current Account</option>
+            <option value="instant-saver">Saving Account</option>
+            <option value="instant-saver">Salary Account</option>
+          </select>
+              </div>
+           <!---Account type---->
+           <!---materials provide---->
+            <br>
+
+
+            <fieldset  style="color:white;height:auto;">
+                <legend>Materials Provide</legend>
+                <br>
+            <div>
+            <input type="checkbox" id="Debit Cards" name="Debit Cards" value="Debit Cards" />
+            <label >Debit Cards</label>
+             </div>
+             <div>
+            <input type="checkbox" id="Credit Cards" name="Credit Cards" value="Credit Cards" />
+            <label for="Credit Cards">Credit Cards</label>
+             </div>
+               <div>
+            <input type="checkbox" id="Prepaid Cards" name="Prepaid Cards" value="Prepaid Cards" />
+            <label>Prepaid Cards</label>
+             </div>
+                <br>
+             </fieldset>
+
+            <!---materials provide---->
+    		<!---Submit Button------>
+            <br>
+           <center>
+             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                SUBMIT
+            </button>
+           </center>
+           
+    		<!---Submit Button----->
+      </form>
+  </div>
+  <!--Body of Form ends--->
+  </body>
+</html>
